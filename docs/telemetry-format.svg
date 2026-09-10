@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 980 600" font-family="Helvetica, Arial, sans-serif">
+<title>Telemetry format - one comma separated line per frame</title>
+<rect x="0" y="0" width="980" height="600" fill="#FFFFFF"/>
+<text x="490" y="36" text-anchor="middle" font-size="19" font-weight="600" fill="#1A1A18">Telemetry Format</text>
+<text x="490" y="58" text-anchor="middle" font-size="13" fill="#6B6A66">Three comma separated numbers and a line ending, 50 times a second, transmit only</text>
+<rect x="40" y="104" width="250" height="72" rx="6" fill="#E4F0FB" stroke="#2C6DA8" stroke-width="1.3"/>
+<text x="165" y="132" text-anchor="middle" font-size="14" font-weight="700" fill="#14415F" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace">target</text>
+<text x="165" y="150" text-anchor="middle" font-size="10.5" fill="#2C6DA8">0 - 4095</text>
+<text x="165" y="166" text-anchor="middle" font-size="10.5" fill="#6B6A66">ADC on PA0</text>
+<rect x="296" y="104" width="44" height="72" rx="6" fill="#FFFFFF" stroke="#5F5E5A" stroke-width="1.3"/>
+<text x="318" y="148" text-anchor="middle" font-size="14" font-weight="700" fill="#2C2C2A" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace">,</text>
+<rect x="346" y="104" width="250" height="72" rx="6" fill="#E1F5EE" stroke="#0F6E56" stroke-width="1.3"/>
+<text x="471" y="132" text-anchor="middle" font-size="14" font-weight="700" fill="#0A4D3C" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace">position</text>
+<text x="471" y="150" text-anchor="middle" font-size="10.5" fill="#0F6E56">0 - 4095</text>
+<text x="471" y="166" text-anchor="middle" font-size="10.5" fill="#6B6A66">ADC on PA1</text>
+<rect x="602" y="104" width="44" height="72" rx="6" fill="#FFFFFF" stroke="#5F5E5A" stroke-width="1.3"/>
+<text x="624" y="148" text-anchor="middle" font-size="14" font-weight="700" fill="#2C2C2A" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace">,</text>
+<rect x="652" y="104" width="210" height="72" rx="6" fill="#FAEEDA" stroke="#854F0B" stroke-width="1.3"/>
+<text x="757" y="132" text-anchor="middle" font-size="14" font-weight="700" fill="#633806" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace">pwm</text>
+<text x="757" y="150" text-anchor="middle" font-size="10.5" fill="#854F0B">0 - 999</text>
+<text x="757" y="166" text-anchor="middle" font-size="10.5" fill="#6B6A66">duty out of 1000</text>
+<rect x="868" y="104" width="92" height="72" rx="6" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="1.3"/>
+<text x="914" y="148" text-anchor="middle" font-size="14" font-weight="700" fill="#2C2C2A" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace">CR LF</text>
+<text x="40" y="200" font-size="11.5" fill="#6B6A66">No header, no checksum, no units. Values are raw counts, exactly as the firmware holds them.</text>
+<text x="40" y="232" font-size="12.5" font-weight="700" fill="#1A1A18">On the wire</text>
+<rect x="40" y="246" width="560" height="118" rx="8" fill="#FBFAF7" stroke="#D3D1C7" stroke-width="1"/>
+<text x="70" y="274" font-size="13.5" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" fill="#26215C">2011,1998,26</text>
+<text x="70" y="298" font-size="13.5" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" fill="#26215C">2011,1974,74</text>
+<text x="70" y="322" font-size="13.5" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" fill="#26215C">2011,1802,418</text>
+<text x="70" y="346" font-size="13.5" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" fill="#26215C">2011,1500,999</text>
+<text x="330" y="274" font-size="11" fill="#6B6A66">setpoint held steady</text>
+<text x="330" y="298" font-size="11" fill="#6B6A66">position drifting away</text>
+<text x="330" y="322" font-size="11" fill="#6B6A66">effort climbing with the error</text>
+<text x="330" y="346" font-size="11" font-weight="700" fill="#8A2015">clamped at full duty</text>
+<rect x="628" y="246" width="312" height="118" rx="8" fill="#E4F0FB" stroke="#2C6DA8" stroke-width="1.2"/>
+<text x="784" y="272" text-anchor="middle" font-size="12.5" font-weight="700" fill="#14415F">Any CSV plotter reads it</text>
+<text x="784" y="292" text-anchor="middle" font-size="11" fill="#2C6DA8">three channels, no configuration</text>
+<text x="784" y="310" text-anchor="middle" font-size="11" fill="#2C6DA8">beyond port and baud rate</text>
+<text x="784" y="334" text-anchor="middle" font-size="11" fill="#6B6A66">115200 8N1</text>
+<text x="40" y="404" font-size="12.5" font-weight="700" fill="#1A1A18">Rate</text>
+<text x="92" y="404" font-size="11.5" fill="#6B6A66">the control loop runs twenty times faster than the stream it reports on</text>
+<rect x="40" y="418" width="900" height="26" rx="4" fill="#E1F5EE" stroke="#0F6E56" stroke-width="1"/>
+<text x="52" y="436" font-size="11.5" font-weight="700" fill="#0A4D3C">control update, 1000 per second</text>
+<rect x="40" y="452" width="45" height="26" rx="4" fill="#FAEEDA" stroke="#854F0B" stroke-width="1"/>
+<text x="97" y="470" font-size="11.5" font-weight="700" fill="#633806">telemetry frame, 50 per second</text>
+<line x1="40" y1="504" x2="940" y2="504" stroke="#D3D1C7" stroke-width="1"/>
+<text x="40" y="528" font-size="12" font-weight="700" fill="#1A1A18">Third field is effort, not position error:</text>
+<text x="336" y="528" font-size="12" fill="#444441">it is the magnitude after the gain and the clamp, so it stops moving once it reaches 999.</text>
+<text x="40" y="550" font-size="12" font-weight="700" fill="#854F0B">Sign lives on PA6, not in the frame:</text>
+<text x="304" y="550" font-size="12" fill="#444441">the plotted effort is always positive, so a plot alone cannot tell you which way the error points.</text>
+<text x="40" y="572" font-size="12" font-weight="700" fill="#1A1A18">Nothing is received:</text>
+<text x="192" y="572" font-size="12" fill="#444441">only the transmitter is enabled, so the board ignores anything you type at it.</text>
+</svg>

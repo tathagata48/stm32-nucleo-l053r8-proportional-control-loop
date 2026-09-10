@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 980 640" font-family="Helvetica, Arial, sans-serif">
+<title>Control loop - sampling, proportional control and output</title>
+<rect x="0" y="0" width="980" height="640" fill="#FFFFFF"/>
+<defs><marker id="ar" markerWidth="9" markerHeight="9" refX="7" refY="3.2" orient="auto"><path d="M0,0 L7,3.2 L0,6.4 z" fill="#5F5E5A"/></marker><marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="3.2" orient="auto"><path d="M0,0 L7,3.2 L0,6.4 z" fill="#BC2F1E"/></marker></defs>
+<text x="490" y="36" text-anchor="middle" font-size="19" font-weight="600" fill="#1A1A18">Control Loop</text>
+<text x="490" y="58" text-anchor="middle" font-size="13" fill="#6B6A66">Everything below runs once per millisecond, entirely inside the TIM6 handler</text>
+<rect x="20" y="86" width="300" height="196" rx="10" fill="#FAFAF8" stroke="#E6E4DC" stroke-width="1"/>
+<text x="36" y="106" font-size="12" font-weight="700" fill="#2C6DA8">Sampled continuously, no interrupt</text>
+<rect x="38" y="116" width="122" height="56" rx="6" fill="#FBE3E0" stroke="#BC2F1E" stroke-width="1.2"/>
+<text x="99" y="140" text-anchor="middle" font-size="12.4" font-weight="700" fill="#8A2015">PA0</text>
+<text x="99" y="157" text-anchor="middle" font-size="11" fill="#BC2F1E">target pot</text>
+<rect x="180" y="116" width="122" height="56" rx="6" fill="#FBE3E0" stroke="#BC2F1E" stroke-width="1.2"/>
+<text x="241" y="140" text-anchor="middle" font-size="12.4" font-weight="700" fill="#8A2015">PA1</text>
+<text x="241" y="157" text-anchor="middle" font-size="11" fill="#BC2F1E">position pot</text>
+<line x1="99" y1="172" x2="99" y2="196" stroke="#5F5E5A" stroke-width="1.6" marker-end="url(#ar)"/>
+<line x1="241" y1="172" x2="241" y2="196" stroke="#5F5E5A" stroke-width="1.6" marker-end="url(#ar)"/>
+<rect x="38" y="200" width="264" height="66" rx="6" fill="#E4F0FB" stroke="#2C6DA8" stroke-width="1.2"/>
+<text x="170" y="221" text-anchor="middle" font-size="12.4" font-weight="700" fill="#14415F">ADC1 continuous scan  ->  DMA1 Ch1</text>
+<text x="170" y="238" text-anchor="middle" font-size="11" fill="#2C6DA8">circular, two half-words</text>
+<text x="170" y="254" text-anchor="middle" font-size="11" fill="#2C6DA8">adc_buffer[0] = target, [1] = position</text>
+<line x1="320" y1="233" x2="366" y2="233" stroke="#5F5E5A" stroke-width="1.6" marker-end="url(#ar)"/>
+<circle cx="400" cy="233" r="26" fill="#FFFFFF" stroke="#5F5E5A" stroke-width="1.6"/>
+<text x="386" y="228" text-anchor="middle" font-size="15" font-weight="700" fill="#0A4D3C">+</text>
+<text x="412" y="243" text-anchor="middle" font-size="15" font-weight="700" fill="#8A2015">-</text>
+<text x="400" y="196" text-anchor="middle" font-size="10.5" fill="#6B6A66">error = target - position</text>
+<line x1="426" y1="233" x2="470" y2="233" stroke="#5F5E5A" stroke-width="1.6" marker-end="url(#ar)"/>
+<rect x="474" y="199" width="190" height="68" rx="6" fill="#EEEDFE" stroke="#534AB7" stroke-width="1.2"/>
+<text x="569" y="221" text-anchor="middle" font-size="12.4" font-weight="700" fill="#26215C">Proportional gain</text>
+<text x="569" y="238" text-anchor="middle" font-size="11" fill="#534AB7">effort = |error| x 2</text>
+<text x="569" y="254" text-anchor="middle" font-size="11" fill="#534AB7">clamped to 999</text>
+<line x1="664" y1="233" x2="708" y2="233" stroke="#5F5E5A" stroke-width="1.6" marker-end="url(#ar)"/>
+<rect x="712" y="190" width="240" height="86" rx="6" fill="#E1F5EE" stroke="#0F6E56" stroke-width="1.2"/>
+<text x="832" y="213" text-anchor="middle" font-size="12.4" font-weight="700" fill="#0A4D3C">TIM2 CH1 PWM on PA5</text>
+<text x="832" y="229" text-anchor="middle" font-size="11" fill="#0F6E56">ARR 999 at 1 kHz</text>
+<text x="832" y="246" text-anchor="middle" font-size="11" fill="#0F6E56">CCR1 = effort</text>
+<text x="832" y="262" text-anchor="middle" font-size="11" fill="#0F6E56">LD2 brightness = duty cycle</text>
+<line x1="569" y1="267" x2="569" y2="318" stroke="#5F5E5A" stroke-width="1.6"/>
+<line x1="569" y1="318" x2="708" y2="318" stroke="#5F5E5A" stroke-width="1.6" marker-end="url(#ar)"/>
+<rect x="712" y="292" width="240" height="52" rx="6" fill="#FAEEDA" stroke="#854F0B" stroke-width="1.2"/>
+<text x="832" y="322" text-anchor="middle" font-size="12.4" font-weight="700" fill="#633806">PA6 = sign of the error</text>
+<line x1="400" y1="259" x2="400" y2="392" stroke="#5F5E5A" stroke-width="1.6"/>
+<line x1="400" y1="392" x2="708" y2="392" stroke="#5F5E5A" stroke-width="1.6" marker-end="url(#ar)"/>
+<rect x="712" y="366" width="240" height="52" rx="6" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="1.2"/>
+<text x="832" y="396" text-anchor="middle" font-size="12.4" font-weight="700" fill="#2C2C2A">Telemetry, every 20th tick</text>
+<text x="410" y="386" font-size="10.5" fill="#6B6A66">target, position and effort</text>
+<path d="M952,233 L964,233 L964,472 L241,472 L241,182" fill="none" stroke="#BC2F1E" stroke-width="1.6" stroke-dasharray="7 5"/>
+<circle cx="600" cy="472" r="16" fill="#FFFFFF" stroke="#BC2F1E" stroke-width="1.6" stroke-dasharray="3 3"/>
+<line x1="590" y1="482" x2="610" y2="462" stroke="#BC2F1E" stroke-width="2"/>
+<text x="600" y="502" text-anchor="middle" font-size="11.5" font-weight="700" fill="#8A2015">no physical feedback path</text>
+<text x="600" y="519" text-anchor="middle" font-size="11" fill="#6B6A66">the PWM output does not move the position pot</text>
+<text x="252" y="440" font-size="11" fill="#8A2015">you close the loop by hand</text>
+<line x1="20" y1="546" x2="960" y2="546" stroke="#D3D1C7" stroke-width="1"/>
+<text x="20" y="570" font-size="12" font-weight="700" fill="#1A1A18">Proportional only:</text>
+<text x="162" y="570" font-size="12" fill="#444441">there is no integral or derivative term, so a real plant would settle with a standing offset.</text>
+<text x="20" y="592" font-size="12" font-weight="700" fill="#1A1A18">Gain of two saturates early:</text>
+<text x="228" y="592" font-size="12" fill="#444441">an error of 500 counts out of 4095 already commands full duty, so the LED sits at 100 percent often.</text>
+<text x="20" y="614" font-size="12" font-weight="700" fill="#1A1A18">The main function is empty:</text>
+<text x="228" y="614" font-size="12" fill="#444441">every line of behaviour lives in the handler, and the ADC keeps filling its buffer without any help.</text>
+</svg>

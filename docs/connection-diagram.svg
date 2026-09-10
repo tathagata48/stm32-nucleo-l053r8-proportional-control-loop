@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 980 600" font-family="Helvetica, Arial, sans-serif">
+<title>Connection diagram - two analog inputs, PWM output and telemetry</title>
+<rect x="0" y="0" width="980" height="600" fill="#FFFFFF"/>
+<text x="490" y="36" text-anchor="middle" font-size="19" font-weight="600" fill="#1A1A18">Connection Diagram</text>
+<text x="490" y="58" text-anchor="middle" font-size="13" fill="#6B6A66">Two potentiometers in, one PWM output and a telemetry stream out</text>
+<rect x="40" y="86" width="900" height="78" rx="10" fill="#EEEDFE" stroke="#534AB7" stroke-width="1.2"/>
+<text x="490" y="112" text-anchor="middle" font-size="16" font-weight="600" fill="#26215C">NUCLEO-L053R8</text>
+<text x="490" y="133" text-anchor="middle" font-size="12" fill="#534AB7">Only the two potentiometers need wiring, the LED and the serial link are already on the board</text>
+<text x="490" y="152" text-anchor="middle" font-size="12" fill="#534AB7">Powered over USB, pots run from the 3V3 and GND pins</text>
+<text x="130" y="182" text-anchor="middle" font-size="10" font-weight="700" fill="#8A8880" letter-spacing="0.6">IN</text>
+<text x="130" y="202" text-anchor="middle" font-size="14" font-weight="700" fill="#26215C">PA0</text>
+<text x="130" y="218" text-anchor="middle" font-size="10" fill="#7A72D6">A0 . CN8</text>
+<line x1="130" y1="226" x2="130" y2="252" stroke="#5F5E5A" stroke-width="1.8"/>
+<text x="330" y="182" text-anchor="middle" font-size="10" font-weight="700" fill="#8A8880" letter-spacing="0.6">IN</text>
+<text x="330" y="202" text-anchor="middle" font-size="14" font-weight="700" fill="#26215C">PA1</text>
+<text x="330" y="218" text-anchor="middle" font-size="10" fill="#7A72D6">A1 . CN8</text>
+<line x1="330" y1="226" x2="330" y2="252" stroke="#5F5E5A" stroke-width="1.8"/>
+<text x="540" y="182" text-anchor="middle" font-size="10" font-weight="700" fill="#8A8880" letter-spacing="0.6">OUT</text>
+<text x="540" y="202" text-anchor="middle" font-size="14" font-weight="700" fill="#26215C">PA5</text>
+<text x="540" y="218" text-anchor="middle" font-size="10" fill="#7A72D6">D13 . on board</text>
+<line x1="540" y1="226" x2="540" y2="252" stroke="#5F5E5A" stroke-width="1.8"/>
+<text x="700" y="182" text-anchor="middle" font-size="10" font-weight="700" fill="#8A8880" letter-spacing="0.6">OUT</text>
+<text x="700" y="202" text-anchor="middle" font-size="14" font-weight="700" fill="#26215C">PA6</text>
+<text x="700" y="218" text-anchor="middle" font-size="10" fill="#7A72D6">D12 . CN5</text>
+<line x1="700" y1="226" x2="700" y2="252" stroke="#5F5E5A" stroke-width="1.8"/>
+<text x="860" y="182" text-anchor="middle" font-size="10" font-weight="700" fill="#8A8880" letter-spacing="0.6">OUT</text>
+<text x="860" y="202" text-anchor="middle" font-size="14" font-weight="700" fill="#26215C">PA2</text>
+<text x="860" y="218" text-anchor="middle" font-size="10" fill="#7A72D6">virtual COM</text>
+<line x1="860" y1="226" x2="860" y2="252" stroke="#5F5E5A" stroke-width="1.8"/>
+<rect x="40" y="256" width="180" height="176" rx="8" fill="#FCFBF7" stroke="#BC2F1E" stroke-width="1.2"/>
+<text x="130" y="280" text-anchor="middle" font-size="12.5" font-weight="700" fill="#8A2015">Target potentiometer</text>
+<text x="130" y="296" text-anchor="middle" font-size="10.5" fill="#6B6A66">the setpoint you dial in</text>
+<line x1="130" y1="304" x2="130" y2="328" stroke="#5F5E5A" stroke-width="1.8"/>
+<polygon points="125,328 135,328 130,338" fill="#5F5E5A"/>
+<rect x="72" y="342" width="116" height="30" rx="3" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="1.2"/>
+<text x="130" y="362" text-anchor="middle" font-size="10.5" fill="#444441">10 kΩ linear</text>
+<line x1="72" y1="357" x2="56" y2="357" stroke="#C0392B" stroke-width="2"/>
+<line x1="56" y1="357" x2="56" y2="398" stroke="#C0392B" stroke-width="2"/>
+<text x="56" y="414" text-anchor="middle" font-size="11" font-weight="700" fill="#A03225">3V3</text>
+<line x1="188" y1="357" x2="204" y2="357" stroke="#378ADD" stroke-width="2"/>
+<line x1="204" y1="357" x2="204" y2="398" stroke="#378ADD" stroke-width="2"/>
+<text x="204" y="414" text-anchor="middle" font-size="11" font-weight="700" fill="#185FA5">GND</text>
+<rect x="240" y="256" width="180" height="176" rx="8" fill="#FCFBF7" stroke="#BC2F1E" stroke-width="1.2"/>
+<text x="330" y="280" text-anchor="middle" font-size="12.5" font-weight="700" fill="#8A2015">Position potentiometer</text>
+<text x="330" y="296" text-anchor="middle" font-size="10.5" fill="#6B6A66">stands in for a sensor</text>
+<line x1="330" y1="304" x2="330" y2="328" stroke="#5F5E5A" stroke-width="1.8"/>
+<polygon points="325,328 335,328 330,338" fill="#5F5E5A"/>
+<rect x="272" y="342" width="116" height="30" rx="3" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="1.2"/>
+<text x="330" y="362" text-anchor="middle" font-size="10.5" fill="#444441">10 kΩ linear</text>
+<line x1="272" y1="357" x2="256" y2="357" stroke="#C0392B" stroke-width="2"/>
+<line x1="256" y1="357" x2="256" y2="398" stroke="#C0392B" stroke-width="2"/>
+<text x="256" y="414" text-anchor="middle" font-size="11" font-weight="700" fill="#A03225">3V3</text>
+<line x1="388" y1="357" x2="404" y2="357" stroke="#378ADD" stroke-width="2"/>
+<line x1="404" y1="357" x2="404" y2="398" stroke="#378ADD" stroke-width="2"/>
+<text x="404" y="414" text-anchor="middle" font-size="11" font-weight="700" fill="#185FA5">GND</text>
+<rect x="455" y="256" width="170" height="176" rx="8" fill="#FCFBF7" stroke="#0F6E56" stroke-width="1.2"/>
+<text x="540" y="280" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0A4D3C">LD2, green</text>
+<text x="540" y="296" text-anchor="middle" font-size="10.5" fill="#6B6A66">already on the board</text>
+<circle cx="540" cy="348" r="26" fill="#D8F3E7" stroke="#0F6E56" stroke-width="2"/>
+<circle cx="540" cy="348" r="11" fill="#0F6E56"/>
+<text x="540" y="398" text-anchor="middle" font-size="11" fill="#0F6E56">brightness = duty cycle</text>
+<text x="540" y="416" text-anchor="middle" font-size="11" fill="#0F6E56">TIM2 CH1 . AF5 . 1 kHz</text>
+<rect x="630" y="256" width="140" height="176" rx="8" fill="#FCFBF7" stroke="#854F0B" stroke-width="1.2"/>
+<text x="700" y="280" text-anchor="middle" font-size="12.5" font-weight="700" fill="#633806">Direction</text>
+<text x="700" y="296" text-anchor="middle" font-size="10.5" fill="#6B6A66">plain output</text>
+<rect x="654" y="316" width="92" height="28" rx="4" fill="#FAEEDA" stroke="#854F0B" stroke-width="1"/>
+<text x="700" y="335" text-anchor="middle" font-size="11" font-weight="700" fill="#633806">HIGH</text>
+<text x="700" y="358" text-anchor="middle" font-size="10.5" fill="#854F0B">target above position</text>
+<rect x="654" y="370" width="92" height="28" rx="4" fill="#FFFFFF" stroke="#854F0B" stroke-width="1"/>
+<text x="700" y="389" text-anchor="middle" font-size="11" font-weight="700" fill="#633806">LOW</text>
+<text x="700" y="412" text-anchor="middle" font-size="10.5" fill="#854F0B">target below position</text>
+<rect x="780" y="256" width="160" height="176" rx="8" fill="#FCFBF7" stroke="#2C6DA8" stroke-width="1.2"/>
+<text x="860" y="280" text-anchor="middle" font-size="12.5" font-weight="700" fill="#14415F">ST-LINK VCP</text>
+<text x="860" y="296" text-anchor="middle" font-size="10.5" fill="#6B6A66">no wiring needed</text>
+<rect x="800" y="318" width="120" height="58" rx="4" fill="#E4F0FB" stroke="#2C6DA8" stroke-width="1"/>
+<text x="860" y="342" text-anchor="middle" font-size="11" font-weight="700" fill="#14415F">115200 8N1</text>
+<text x="860" y="360" text-anchor="middle" font-size="10.5" fill="#2C6DA8">transmit only</text>
+<text x="860" y="398" text-anchor="middle" font-size="10.5" fill="#2C6DA8">CSV telemetry</text>
+<text x="860" y="416" text-anchor="middle" font-size="10.5" fill="#2C6DA8">50 frames per second</text>
+<line x1="40" y1="454" x2="940" y2="454" stroke="#D3D1C7" stroke-width="1"/>
+<text x="40" y="478" font-size="12" font-weight="700" fill="#1A1A18">Both pots are dividers:</text>
+<text x="206" y="478" font-size="12" fill="#444441">outer legs to 3V3 and GND, wiper to the analog pin. Anything from about 1 kΩ to 100 kΩ works.</text>
+<text x="40" y="500" font-size="12" font-weight="700" fill="#8A2015">Nothing drives PA1:</text>
+<text x="188" y="500" font-size="12" fill="#444441">the position input is turned by hand. The firmware never moves it, so the loop only closes through you.</text>
+<text x="40" y="522" font-size="12" font-weight="700" fill="#1A1A18">PA5 is LD2:</text>
+<text x="136" y="522" font-size="12" fill="#444441">the user LED is already tied to that pin, so the PWM shows up without adding an LED of your own.</text>
+<text x="40" y="544" font-size="12" font-weight="700" fill="#854F0B">PA6 is informational:</text>
+<text x="196" y="544" font-size="12" fill="#444441">it carries the sign of the error the way a motor driver would want, but nothing is connected to it.</text>
+</svg>

@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 980 600" font-family="Helvetica, Arial, sans-serif">
+<title>Timing - the 1 kHz control tick and the 50 Hz telemetry burst</title>
+<rect x="0" y="0" width="980" height="600" fill="#FFFFFF"/>
+<defs><marker id="ar" markerWidth="9" markerHeight="9" refX="7" refY="3.2" orient="auto"><path d="M0,0 L7,3.2 L0,6.4 z" fill="#5F5E5A"/></marker><marker id="arl" markerWidth="9" markerHeight="9" refX="1.5" refY="3.2" orient="auto"><path d="M7,0 L0,3.2 L7,6.4 z" fill="#5F5E5A"/></marker></defs>
+<text x="490" y="36" text-anchor="middle" font-size="19" font-weight="600" fill="#1A1A18">Loop Timing</text>
+<text x="490" y="58" text-anchor="middle" font-size="13" fill="#6B6A66">The control update is cheap. The telemetry frame that rides every twentieth tick is not.</text>
+<text x="70" y="96" font-size="12" font-weight="700" fill="#534AB7">TIM6 update, one every millisecond</text>
+<line x1="70" y1="190" x2="888" y2="190" stroke="#5F5E5A" stroke-width="1.4"/>
+<line x1="70.0" y1="190" x2="70.0" y2="197" stroke="#5F5E5A" stroke-width="1.2"/>
+<text x="70.0" y="212" text-anchor="middle" font-size="10.5" fill="#6B6A66">0 ms</text>
+<line x1="110.5" y1="190" x2="110.5" y2="197" stroke="#5F5E5A" stroke-width="1.2"/>
+<line x1="151.0" y1="190" x2="151.0" y2="197" stroke="#5F5E5A" stroke-width="1.2"/>
+<line x1="191.5" y1="190" x2="191.5" y2="197" stroke="#5F5E5A" stroke-width="1.2"/>
+<line x1="232.0" y1="190" x2="232.0" y2="197" stroke="#5F5E5A" stroke-width="1.2"/>
+<line x1="272.5" y1="190" x2="272.5" y2="197" stroke="#5F5E5A" stroke-width="1.2"/>
+<text x="272.5" y="212" text-anchor="middle" font-size="10.5" fill="#6B6A66">5 ms</text>
+<line x1="313.0" y1="190" x2="313.0" y2="197" stroke="#5F5E5A" stroke-width="1.2"/>
+<line x1="353.5" y1="190" x2="353.5" y2="197" stroke="#5F5E5A" stroke-width="1.2"/>
+<line x1="394.0" y1="190" x2="394.0" y2="197" stroke="#5F5E5A" stroke-width="1.2"/>
+<line x1="434.5" y1="190" x2="434.5" y2="197" stroke="#5F5E5A" stroke-width="1.2"/>
+<line x1="475.0" y1="190" x2="475.0" y2="197" stroke="#5F5E5A" stroke-width="1.2"/>
+<text x="475.0" y="212" text-anchor="middle" font-size="10.5" fill="#6B6A66">10 ms</text>
+<line x1="515.5" y1="190" x2="515.5" y2="197" stroke="#5F5E5A" stroke-width="1.2"/>
+<line x1="556.0" y1="190" x2="556.0" y2="197" stroke="#5F5E5A" stroke-width="1.2"/>
+<line x1="596.5" y1="190" x2="596.5" y2="197" stroke="#5F5E5A" stroke-width="1.2"/>
+<line x1="637.0" y1="190" x2="637.0" y2="197" stroke="#5F5E5A" stroke-width="1.2"/>
+<line x1="677.5" y1="190" x2="677.5" y2="197" stroke="#5F5E5A" stroke-width="1.2"/>
+<text x="677.5" y="212" text-anchor="middle" font-size="10.5" fill="#6B6A66">15 ms</text>
+<line x1="718.0" y1="190" x2="718.0" y2="197" stroke="#5F5E5A" stroke-width="1.2"/>
+<line x1="758.5" y1="190" x2="758.5" y2="197" stroke="#5F5E5A" stroke-width="1.2"/>
+<line x1="799.0" y1="190" x2="799.0" y2="197" stroke="#5F5E5A" stroke-width="1.2"/>
+<line x1="839.5" y1="190" x2="839.5" y2="197" stroke="#5F5E5A" stroke-width="1.2"/>
+<line x1="880.0" y1="190" x2="880.0" y2="197" stroke="#5F5E5A" stroke-width="1.2"/>
+<text x="880.0" y="212" text-anchor="middle" font-size="10.5" fill="#6B6A66">20 ms</text>
+<rect x="67.5" y="164" width="5" height="26" rx="1.5" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.8"/>
+<rect x="108.0" y="164" width="5" height="26" rx="1.5" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.8"/>
+<rect x="148.5" y="164" width="5" height="26" rx="1.5" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.8"/>
+<rect x="189.0" y="164" width="5" height="26" rx="1.5" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.8"/>
+<rect x="229.5" y="164" width="5" height="26" rx="1.5" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.8"/>
+<rect x="270.0" y="164" width="5" height="26" rx="1.5" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.8"/>
+<rect x="310.5" y="164" width="5" height="26" rx="1.5" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.8"/>
+<rect x="351.0" y="164" width="5" height="26" rx="1.5" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.8"/>
+<rect x="391.5" y="164" width="5" height="26" rx="1.5" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.8"/>
+<rect x="432.0" y="164" width="5" height="26" rx="1.5" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.8"/>
+<rect x="472.5" y="164" width="5" height="26" rx="1.5" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.8"/>
+<rect x="513.0" y="164" width="5" height="26" rx="1.5" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.8"/>
+<rect x="553.5" y="164" width="5" height="26" rx="1.5" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.8"/>
+<rect x="594.0" y="164" width="5" height="26" rx="1.5" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.8"/>
+<rect x="634.5" y="164" width="5" height="26" rx="1.5" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.8"/>
+<rect x="675.0" y="164" width="5" height="26" rx="1.5" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.8"/>
+<rect x="715.5" y="164" width="5" height="26" rx="1.5" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.8"/>
+<rect x="756.0" y="164" width="5" height="26" rx="1.5" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.8"/>
+<rect x="796.5" y="164" width="5" height="26" rx="1.5" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.8"/>
+<rect x="837.0" y="164" width="5" height="26" rx="1.5" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.8"/>
+<rect x="877.5" y="164" width="5" height="26" rx="1.5" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.8"/>
+<text x="76" y="154" font-size="11" fill="#0F6E56">each tick: read the buffer, subtract, set direction, write CCR1</text>
+<text x="76" y="138" font-size="11" font-weight="700" fill="#0A4D3C">a few microseconds</text>
+<rect x="877.5" y="150" width="49.4" height="40" rx="3" fill="#FAEEDA" stroke="#854F0B" stroke-width="1.4"/>
+<text x="868.0" y="128" text-anchor="end" font-size="11" font-weight="700" fill="#633806">telemetry frame</text>
+<line x1="872.0" y1="124" x2="886.0" y2="146" stroke="#5F5E5A" stroke-width="1.2" marker-end="url(#ar)"/>
+<text x="76" y="236" font-size="11" fill="#6B6A66">ticks 1 to 19 do control only</text>
+<rect x="70" y="268" width="860" height="180" rx="10" fill="#FCFCFA" stroke="#D3D1C7" stroke-width="1"/>
+<text x="90" y="292" font-size="12.5" font-weight="700" fill="#1A1A18">Inside the twentieth tick</text>
+<text x="266" y="292" font-size="11.5" fill="#6B6A66">drawn to scale against the 1 ms tick period</text>
+<line x1="110" y1="378" x2="890" y2="378" stroke="#5F5E5A" stroke-width="1.2"/>
+<line x1="110.0" y1="378" x2="110.0" y2="385" stroke="#5F5E5A" stroke-width="1"/>
+<text x="110.0" y="400" text-anchor="middle" font-size="10.5" fill="#6B6A66">0.0 ms</text>
+<line x1="353.8" y1="378" x2="353.8" y2="385" stroke="#5F5E5A" stroke-width="1"/>
+<text x="353.8" y="400" text-anchor="middle" font-size="10.5" fill="#6B6A66">0.5 ms</text>
+<line x1="597.5" y1="378" x2="597.5" y2="385" stroke="#5F5E5A" stroke-width="1"/>
+<text x="597.5" y="400" text-anchor="middle" font-size="10.5" fill="#6B6A66">1.0 ms</text>
+<line x1="841.2" y1="378" x2="841.2" y2="385" stroke="#5F5E5A" stroke-width="1"/>
+<text x="841.2" y="400" text-anchor="middle" font-size="10.5" fill="#6B6A66">1.5 ms</text>
+<rect x="110" y="330" width="9.8" height="34" rx="3" fill="#E1F5EE" stroke="#0F6E56" stroke-width="1.2"/>
+<text x="106" y="322" font-size="10.5" fill="#0A4D3C">control</text>
+<rect x="119.8" y="330" width="594.8" height="34" rx="3" fill="#FAEEDA" stroke="#854F0B" stroke-width="1.2"/>
+<text x="417.1" y="352" text-anchor="middle" font-size="11.5" font-weight="700" fill="#633806">send_telemetry blocks here, about 1.2 ms</text>
+<line x1="597.5" y1="304" x2="597.5" y2="378" stroke="#BC2F1E" stroke-width="1.6" stroke-dasharray="5 4"/>
+<text x="597.5" y="298" text-anchor="middle" font-size="11" font-weight="700" fill="#8A2015">next tick due</text>
+<line x1="70" y1="486" x2="930" y2="486" stroke="#D3D1C7" stroke-width="1"/>
+<text x="70" y="510" font-size="12" font-weight="700" fill="#8A2015">The frame outlasts the tick:</text>
+<text x="272" y="510" font-size="12" fill="#444441">fourteen characters at 115200 take about 1.2 ms, and the transmit loop spins on TXE.</text>
+<text x="70" y="532" font-size="12" font-weight="700" fill="#1A1A18">So one update slips every 20 ms:</text>
+<text x="316" y="532" font-size="12" fill="#444441">the handler is still busy when the next update event arrives, so that tick runs late.</text>
+<text x="70" y="554" font-size="12" font-weight="700" fill="#1A1A18">Harmless here, not in general:</text>
+<text x="296" y="554" font-size="12" fill="#444441">a human turning a knob will not notice, but a real actuator would want DMA on the transmit side.</text>
+<text x="70" y="576" font-size="12" font-weight="700" fill="#0A4D3C">Sampling is unaffected:</text>
+<text x="252" y="576" font-size="12" fill="#444441">the ADC and its DMA channel keep running throughout, so no reading is ever missed.</text>
+</svg>
