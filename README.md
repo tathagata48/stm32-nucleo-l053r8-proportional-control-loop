@@ -1,39 +1,47 @@
 # STM32 Nucleo-L053R8 — Proportional Control Loop
 
 A bare-metal (register-level) STM32 project for the **NUCLEO-L053R8** board
-(STM32L053R8, Cortex-M0+). Two potentiometers stand in for a setpoint and a
-position sensor. A proportional controller runs a thousand times a second,
-drives the on-board LED with the resulting effort, and streams target, position
-and effort out of the serial port as comma separated values.
+(STM32L053R8, Cortex-M0+). Two analog inputs act as a setpoint and a position
+reading. A proportional controller runs a thousand times a second, drives the
+on-board LED with the resulting effort, and streams target, position and effort
+out of the serial port as comma separated values.
 
 The ADC fills its buffer by DMA without ever raising an interrupt, and `main()`
 is an empty loop. Every line of behaviour lives in one timer handler.
 
 ## Demo
 
-Turning the target potentiometer moves the setpoint away from the position
-input. The error grows, the effort follows it, and all three channels scroll
-past in a serial plotter.
+Nothing is wired to the board. Touching a header pin couples enough hum into
+the floating analog input to shift it by hundreds of counts. The error follows,
+the green user LED tracks the effort, and all three channels scroll past in a
+serial plotter.
 
-![Demo — turning the potentiometer while target, position and effort stream into a serial plotter](docs/demo.gif)
+![Demo — a fingertip on a header pin moves a floating analog input while target, position and effort stream into a serial plotter](docs/demo.gif)
 
 ## Hardware
 
-Only the two potentiometers need wiring. The LED and the serial link are
-already on the board.
+Nothing external is needed. The board on its own is the whole demonstration.
 
 | Pin | Direction | Role                                         |
 |-----|-----------|----------------------------------------------|
-| PA0 | in        | target potentiometer wiper, ADC channel 0    |
-| PA1 | in        | position potentiometer wiper, ADC channel 1  |
-| PA5 | out       | PWM effort, TIM2 channel 1 — this is LD2     |
+| PA0 | in        | target, ADC channel 0, left floating         |
+| PA1 | in        | position, ADC channel 1, left floating       |
+| PA5 | out       | PWM effort, TIM2 channel 1 — the green LD2   |
 | PA6 | out       | direction, high when the target is above     |
 | PA2 | out       | telemetry, USART2 TX to the ST-LINK COM port |
 
-![Connection diagram — two analog inputs, PWM output and telemetry](docs/connection-diagram.svg)
+![Connection diagram — nothing wired, both analog inputs left floating](docs/connection-diagram.svg)
 
-Both pots are ordinary dividers: outer legs to 3V3 and GND, wiper to the analog
-pin. Anything from about 1 kΩ to 100 kΩ works.
+Both analog inputs are left unconnected. A floating input sits wherever the
+surrounding electrical noise leaves it, so the readings are mains hum and stray
+coupling rather than a measurement of anything. Touching a header pin adds your
+body capacitance to it and shifts the count by hundreds, which is more than
+enough to drive the loop and watch it react.
+
+That makes a complete demonstration with no parts at all, but treat the numbers
+as a stimulus rather than a position. For a controlled input, wire a
+potentiometer per pin as a divider across 3V3 and GND with the wiper on the
+pin. Nothing in the firmware changes.
 
 ## Control loop
 
@@ -44,7 +52,7 @@ clamp it to the PWM period.
 ![Control loop — sampling, proportional control and output](docs/control-loop.svg)
 
 **The loop is not closed through physics.** Nothing in the circuit connects the
-PWM output back to the position input — that pot is turned by hand. So this
+PWM output back to the position input — that pin is moved by hand. So this
 demonstrates the controller, not a servo: you play the part of the plant.
 
 Two consequences worth knowing before reading the traces:
@@ -65,7 +73,7 @@ polled loop rather than DMA.
 Fourteen characters at 115200 baud occupy the line for about 1.2 ms, which is
 longer than the 1 ms tick period. The handler is therefore still transmitting
 when the next update event arrives, and that one tick runs late. It happens
-once every 20 ms and a hand-turned knob will never notice, but it is the first
+once every 20 ms and nothing you do by hand will notice, but it is the first
 thing to fix if this drove a real actuator.
 
 Sampling is unaffected either way: the ADC and its DMA channel keep running
@@ -96,7 +104,7 @@ direction the controller is pushing.
 
 | Peripheral | Role              | Configuration                                     |
 |------------|-------------------|---------------------------------------------------|
-| ADC1       | samples both pots | continuous scan of channels 0 and 1, DMA circular |
+| ADC1       | samples both pins | continuous scan of channels 0 and 1, DMA circular |
 | DMA1 Ch1   | moves results     | circular, two half-words, no interrupt            |
 | TIM2       | PWM output        | PSC 31, ARR 999 — 1 kHz on channel 1, PA5, AF5    |
 | TIM6       | control tick      | PSC 31, ARR 999 — 1 kHz interrupt                 |

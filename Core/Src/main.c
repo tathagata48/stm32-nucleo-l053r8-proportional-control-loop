@@ -2,19 +2,24 @@
  * Proportional control loop with ADC sampling and CSV telemetry
  * NUCLEO-L053R8, bare metal (no HAL)
  *
- * Two potentiometers stand in for a setpoint and a position sensor.
- * A proportional controller runs at 1 kHz, drives the on-board LED with
+ * Two analog inputs act as a setpoint and a position reading. A
+ * proportional controller runs at 1 kHz, drives the on-board LED with
  * the resulting effort, and reports the three values over the serial
  * port as comma separated text.
+ *
+ * Both analog pins are left floating in this build - touching a header
+ * pin couples in enough hum and body capacitance to move the reading,
+ * which is what the demo does. Wire a potentiometer per pin as a
+ * divider if a controlled input is wanted; nothing here changes.
  *
  * Clock
  *   HSI16 -> PLL x4 /2 -> 32 MHz, the maximum for this part.
  *   Voltage range 1 and one flash wait state are set beforehand.
  *
  * Signals
- *   PA0  target pot wiper      ADC channel 0
- *   PA1  position pot wiper    ADC channel 1
- *   PA5  PWM effort            TIM2 CH1, AF5, also LD2 on the board
+ *   PA0  target input          ADC channel 0, floating
+ *   PA1  position input        ADC channel 1, floating
+ *   PA5  PWM effort            TIM2 CH1, AF5, the green LD2 user LED
  *   PA6  direction             high when the target is above position
  *   PA2  telemetry out         USART2 TX, virtual COM port
  *
